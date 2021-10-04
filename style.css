@@ -1,0 +1,109 @@
+body { 
+    padding-top: 80px; 
+    height: 100%;
+    background-color: whitesmoke;
+}
+table {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%); 
+    border-collapse: collapse; 
+    border-spacing: 50px;
+    align-self: center;
+
+}
+td {   
+    border: 1px solid #79d9ce;
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+}
+
+.Wall{
+    background-color: black;
+}
+
+.start{
+    background-color: forestgreen;
+}
+
+.end{
+    background-color: darkred;
+}
+
+.path {
+   
+    animation: shortestPath 3s;
+    background-color: rgb(255, 254, 106);
+}
+
+.visited{
+   
+    animation: visitedAnimation 10s;
+    background-color: rgba(17, 104, 217, 0.75);
+   
+}
+
+.box {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    border: 1px solid;
+   
+    margin: -5px auto;
+  }
+
+  .legend-box{
+      display:list-item;
+      line-height: 3em;  
+  }
+ 
+  span {
+    padding: 3px 5px;
+    height: 20px;
+    width: 20px;
+    margin: 10px auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: large;
+    font-weight: bold;
+  }
+ 
+
+  @keyframes visitedAnimation {
+    0% {
+      transform: scale(0.5);
+      background-color: rgba(0, 0, 66, 0.75);
+      border-radius: 100%;
+    }
+  
+    50% {
+      background-color: rgba(17, 104, 217, 0.75);
+    }
+  
+    75% {
+      transform: scale(1.2);
+      background-color: rgba(0, 217, 159, 0.75);
+    }
+  
+    100% {
+      transform: scale(1);
+      background-color: rgba(0, 190, 218, 0.75);
+    }
+  }
+
+
+
+  @keyframes shortestPath {
+    0% {
+      transform: scale(0.8);
+      background-color: rgb(255, 254, 106);
+    }
+  
+  
+  
+    100% {
+      transform: scale(1);
+      background-color: rgb(255, 254, 106);
+    }
+  }
