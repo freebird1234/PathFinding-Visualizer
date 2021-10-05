@@ -1,118 +1,105 @@
-body { 
-    padding-top: 80px; 
-    height: 100%;
-    background-color: whitesmoke;
+body {
+  padding-top: 80px;
+  height: 100%;
+  background-color: whitesmoke;
 }
 table {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%); 
-    border-collapse: collapse; 
-    border-spacing: 50px;
-    align-self: center;
-
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-collapse: collapse;
+  border-spacing: 50px;
+  align-self: center;
 }
-td {   
-    border: 1px solid #79d9ce;
-    width: 20px;
-    height: 20px;
-    box-sizing: border-box;
-}
-
-.Wall{
-    background-color: black;
+td {
+  border: 1px solid #79d9ce;
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
 }
 
-.start{
-    background-color: forestgreen;
+.Wall {
+  background-color: black;
 }
 
-.end{
-    background-color: red;
+.start {
+  background-color: forestgreen;
+}
+
+.end {
+  background-color: red;
 }
 
 .path {
-   
-    animation: shortestPath 1.5s;
-    background-color: yellow;
+  animation: shortestPath 1.5s;
+  background-color: yellow;
 }
 
-.visited{
-   
-    animation: visitedAnimation 1.5s;
-    background-color: rgba(17, 104, 217, 0.75);
-   
+.visited {
+  animation: visitedAnimation 1.5s;
+  background-color: rgba(0, 190, 218, 0.75);
 }
 
 .box {
-    display: inline-block;
-    height: 20px;
-    width: 20px;
-    border: 1px solid;
-    margin: -5px auto;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  border: 1px solid;
+  margin: -5px auto;
+}
+
+.legend-box {
+  display: list-item;
+  line-height: 3em;
+}
+
+span {
+  padding: 3px 5px;
+  height: 20px;
+  width: 20px;
+  margin: 10px auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: large;
+  font-weight: bold;
+}
+
+@keyframes visitedAnimation {
+  50% {
+    transform: scale(0.3);
+    background-color: rgba(0, 0, 66, 0.75);
+    border-radius: 100%;
   }
 
-  .legend-box{
-
-      display:list-item;
-      line-height: 3em;  
-  }
- 
-  span {
-    padding: 3px 5px;
-    height: 20px;
-    width: 20px;
-    margin: 10px auto;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: large;
-    font-weight: bold;
-  }
- 
-
-  @keyframes visitedAnimation {
-  
-      0% {
-        transform: scale(0.3);
-        background-color: rgba(0, 0, 66, 0.75);
-        border-radius: 100%;
-      }
-    
-      50% {
-        background-color: rgba(17, 104, 217, 0.75);
-      }
-    
-      75% {
-        transform: scale(1.2);
-        background-color: rgba(0, 217, 159, 0.75);
-      }
-    
-      100% {
-        transform: scale(1);
-        background-color: rgba(0, 190, 218, 0.75);
-      }
-    
+  75% {
+    transform: scale(1.2);
+    background-color: rgba(0, 217, 159, 0.75);
   }
 
+  100% {
+    transform: scale(1);
+    background-color: rgba(0, 190, 218, 0.75);
+  }
+}
 
-
-button-container{
-    padding-top: 100px;
-    margin: 100px auto;
+button-container {
+  padding-top: 100px;
+  margin: 100px auto;
 }
 
 .button-3 {
-    padding-top: 10px;
-    margin: 30px auto;
+  padding-top: 10px;
+  margin: 30px auto;
   appearance: none;
   background-color: #2ea44f;
-  border: 1px solid rgba(27, 31, 35, .15);
-  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  box-shadow: rgba(27, 31, 35, 0.1) 0 1px 0;
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   font-size: 14px;
   font-weight: 600;
   line-height: 20px;
@@ -137,20 +124,20 @@ button-container{
 }
 
 .button-3:focus {
-  box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+  box-shadow: rgba(46, 164, 79, 0.4) 0 0 0 3px;
   outline: none;
 }
 
 .button-3:disabled {
   background-color: #94d3a2;
-  border-color: rgba(27, 31, 35, .1);
-  color: rgba(255, 255, 255, .8);
+  border-color: rgba(27, 31, 35, 0.1);
+  color: rgba(255, 255, 255, 0.8);
   cursor: default;
 }
 
 .button-3:active {
   background-color: #298e46;
-  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+  box-shadow: rgba(20, 70, 32, 0.2) 0 1px 0 inset;
 }
 
 @keyframes shortestPath {
@@ -161,11 +148,87 @@ button-container{
 
   50% {
     transform: scale(1.2);
-    background-color: rgb(192, 118, 22);
+    background-color: rgb(231, 50, 4);
   }
 
   100% {
     transform: scale(1);
     background-color: rgb(240, 240, 10);
   }
+}
+
+p {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: large;
+  font-weight: bolder;
+}
+
+
+/*the container must be positioned relative:*/
+.custom-select {
+  position: absolute;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: large;
+  font-weight: bold;
+  right: 100px;
+  top:100px;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+
+.select-selected {
+  background-color: #2ea44f;
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: #2ea44f;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
 }
