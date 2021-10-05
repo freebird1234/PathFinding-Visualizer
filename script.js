@@ -1,4 +1,4 @@
-var totalRows = 25;
+=var totalRows = 25;
 var totalCols = 40;
 var table = document.getElementById("table-container");
 var isMouseDown = false;
