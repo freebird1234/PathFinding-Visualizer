@@ -81,6 +81,18 @@ elementsArray[index].className = "start";
 index = getIndex(endElement);
 elementsArray[index].className = "end";
 
+
+//Clear Board
+function clearBoard(){
+
+  for(let i=0;i<elementsArray.length;i++){
+    if(i != getIndex(startElement)  && i!= getIndex(endElement) && !inProgress)
+    elementsArray[i].className="";
+  }
+}
+
+
+
 //Mouse Events
 elementsArray.forEach(function (elem) {
   elem.addEventListener("mousedown", function () {
@@ -162,7 +174,7 @@ function DFSPathFinding() {
     ) {
       elementsArray[i].className = "path";
     }
-  }, 10 );
+  }, 5 );
 }
 
 document.addEventListener("keyup", (event) => {
